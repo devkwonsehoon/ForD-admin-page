@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+    
+    <!-- 달력 부분 -->
+    <link href='../fullcalendar-5.9.0/lib/main.css' rel='stylesheet' />
+    <script src='../fullcalendar-5.9.0/lib/main.js'></script>
+    <script>
+    
+          document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+              initialView: 'dayGridMonth'
+            });
+            calendar.render();
+          });
+    
+    </script>
 
     <title>Hello, world!</title>
   </head>
@@ -38,13 +57,13 @@
                           </li>
 
                           <li class="nav-item">
-                            <a href="user.html" class="nav-link text-black p-3 mb-2 current">
+                            <a href="user.html" class="nav-link text-black p-3 mb-2">
                               <i class="fas fa-cubes text-black fa-lg mr-3"></i>사용자 신고 접수 내역
                             </a>
                           </li>
 
                           <li class="nav-item">
-                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="stat.html" class="nav-link text-black p-3 mb-2 sidebar-link current">
                               <i class="far fa-chart-bar text-black fa-lg mr-3"></i>통계
                             </a>
                           </li>
@@ -56,25 +75,25 @@
                           </li>
 
                           <li class="nav-item">
-                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="weather.html" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="fas fa-icicles text-black fa-lg mr-3"></i>날씨
                             </a>
                           </li>
 
                           <li class="nav-item">
-                            <a href="map.html" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="far fa-map text-black fa-lg mr-3"></i>지도
                             </a>
                           </li>
 
                           <li class="nav-item">
-                            <a href="push.html" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="far fa-envelope-open text-black fa-lg mr-3"></i>push 메시지
                             </a>
                           </li>
 
                           <li class="nav-item">
-                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="response.html" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="fas fa-headset text-black fa-lg mr-3"></i>사고 대응
                             </a>
                           </li>
@@ -83,7 +102,7 @@
                     <div class="col-xl-10 col-lg-10 ml-auto bg-white fixed-top py-2 top-navbar">
                       <div class="row align-items-center">
                         <div class="col-md-9">
-                          <h4 class="text-dark text-uppercase mb-0">사용자 신고 접수 내역</h4>
+                          <h4 class="text-dark text-uppercase mb-0">통계</h4>
                         </div>
                         <div class="col-md-3">
                           <ul class="navbar-nav">
@@ -97,21 +116,107 @@
         </div>
     </nav>
 
-    <!-- 사용자 신고 내역 -->
+    <!-- 줄 -->
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-x1-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row">
+              <div class="col-10">
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div>
+
+    <!-- 검색창 -->
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                  <hr>
+                  <form class="form-inline justify-content-center">
+                    <div class="form-group">
+                        <input type="text" class="search-qeury text-aligne-center" placeholder="장소">
+                    </div>
+
+                    <div class="form-group"> 
+                      <div class="input-group date" id="datetimepicker1" data-target-input="nearest"> 
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" value="From (mm/dd/yyyy)"> 
+                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker"> 
+                          <div class="input-group-text"><i class="fa fa-calendar"></i></div> 
+                        </div> 
+                      </div> 
+                    </div>
+
+                    <div class="form-group"> 
+                      <div class="input-group date" id="datetimepicker2" data-target-input="nearest"> 
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2" value="To (mm/dd/yyyy)"> 
+                        <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker"> 
+                          <div class="input-group-text"><i class="fa fa-calendar"></i></div> 
+                        </div> 
+                      </div> 
+                    </div> 
+              
+                    <div class="form-group">
+                      <button type="submit" class="btn">적용</button>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 줄 -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-x1-10 col-lg-9 col-md-8 ml-auto">
+          <div class="row">
+            <div class="col-10">
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+    <!-- 일자 선택-->
     <section>
       <div class="container-fluid">
         <div class="row">
           <div class="col-x1-10 col-lg-9 col-md-8 ml-auto">
             <div class="row">
               <div class="col-10">
-                <h3 class="text-muted text-left mb-3">사용자 신고 접수 내역</h3>
+                <h5 class="text-muted text-left mb-3">일자 선택</h5>
+                <div id="calendar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br><br>
+
+    <!-- 결빙 통계  -->
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-x1-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row">
+              <div class="col-10">
+                <h3 class="text-muted text-left mb-3">결빙통계</h3>
                 <table class="table bg-light text-left">
                   <thead>
                     <tr class="text-muted">
-                      <th>신고 접수 시간</th>
-                      <th>사용자 id</th>
-                      <th>위치</th>
-                      <th>종류</th>
+                      <th>접수 시간</th>
+                      <th>접수 경로</th>
+                      <th>센서 번호 / 사용자 ID</th>
+                      <th>장소</th>
                       <th>처리 여부</th>
                     </tr>
                   </thead>
@@ -119,129 +224,81 @@
 
                     <tr>
                         <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>결빙센서</th>
+                        <th>FS0101</th>
+                        <th>서울시 종로구</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
+                        <th>사용자</th>
                         <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>부산시 해운대구</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>Nichilas</th>
+                        <th>Shifa NG</th>
+                        <th>Starbucks KL</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>Nichilas</th>
+                        <th>Shifa NG</th>
+                        <th>Starbucks KL</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>Nichilas</th>
+                        <th>Shifa NG</th>
+                        <th>Starbucks KL</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
+                        <th>사용자</th>
                         <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>부산시 해운대구</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>결빙센서</th>
+                        <th>FS0101</th>
+                        <th>서울시 종로구</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
+                        <th>사용자</th>
                         <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>부산시 해운대구</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>결빙센서</th>
+                        <th>FS0101</th>
+                        <th>백악관</th>
                         <th>test</th>
                     </tr>
 
                     <tr>
                         <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>hanium</th>
-                        <th>부산 해운대구</th>
-                        <th>결빙</th>
+                        <th>결빙센서</th>
+                        <th>FS0101</th>
+                        <th>서울시 종로구</th>
                         <th>test</th>
                     </tr>
 
@@ -281,8 +338,6 @@
       </div>
     </section>
 
-
-
     <!-- 로그아웃 팝업 -->
     <div class="modal fade" id="sign-out">
       <div class="modal-dialog">
@@ -307,5 +362,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script type="text/javascript">
+        $(function () { 
+            $('#datetimepicker1').datetimepicker({ format: 'L'}); 
+            $('#datetimepicker2').datetimepicker({ 
+                format: 'L', 
+                useCurrent: false
+            });
+            $("#datetimepicker1").on("change.datetimepicker", function (e) { 
+                $('#datetimepicker2').datetimepicker('minDate', e.date); 
+            }); 
+            $("#datetimepicker2").on("change.datetimepicker", function (e) { 
+                $('#datetimepicker1').datetimepicker('maxDate', e.date); 
+            }); 
+        }); 
+    </script>
+
   </body>
 </html>
