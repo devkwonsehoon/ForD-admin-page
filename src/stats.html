@@ -81,13 +81,13 @@
                           </li>
 
                           <li class="nav-item">
-                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="map.html" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="far fa-map text-black fa-lg mr-3"></i>지도
                             </a>
                           </li>
 
                           <li class="nav-item">
-                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="push.html" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="far fa-envelope-open text-black fa-lg mr-3"></i>push 메시지
                             </a>
                           </li>
@@ -136,34 +136,26 @@
           <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
             <div class="row justify-content-center">
               <div class="col-10">
-                  <hr>
-                  <form class="form-inline justify-content-center">
-                    <div class="form-group">
-                        <input type="text" class="search-qeury text-aligne-center" placeholder="장소">
-                    </div>
-
-                    <div class="form-group"> 
-                      <div class="input-group date" id="datetimepicker1" data-target-input="nearest"> 
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" value="From (mm/dd/yyyy)"> 
-                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker"> 
-                          <div class="input-group-text"><i class="fa fa-calendar"></i></div> 
+                <form class="form-inline">
+                    <input type="text" class="form-group search-qeury text-center" placeholder="장소">
+                    <div class="col-3 form-group">
+                        <div class="input-group date" id="datetimepicker1" data-target-input="nearest"> 
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" value="From (mm/dd/yyyy)"> 
+                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker"> 
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div> 
+                            </div> 
                         </div> 
-                      </div> 
                     </div>
-
-                    <div class="form-group"> 
-                      <div class="input-group date" id="datetimepicker2" data-target-input="nearest"> 
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2" value="To (mm/dd/yyyy)"> 
-                        <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker"> 
-                          <div class="input-group-text"><i class="fa fa-calendar"></i></div> 
-                        </div> 
-                      </div> 
-                    </div> 
-              
-                    <div class="form-group">
-                      <button type="submit" class="btn">적용</button>
+                    <div class="col-3 form-group">
+                        <div class="input-group date" id="datetimepicker2" data-target-input="nearest"> 
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2" value="To (mm/dd/yyyy)"> 
+                            <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker"> 
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div> 
+                            </div>
+                        </div>
                     </div>
-                  </form>
+                    <button type="submit" class="form-group btn btn-Success">적용</button>
+                </form>
               </div>
             </div>
           </div>
@@ -200,110 +192,83 @@
       </div>
     </section>
 
-    <br><br>
+    <br>
 
-    <!-- 결빙 통계  -->
-    <section>
-      <div class="container-fluid">
+    <!-- 줄 -->
+    <div class="container-fluid">
         <div class="row">
           <div class="col-x1-10 col-lg-9 col-md-8 ml-auto">
             <div class="row">
               <div class="col-10">
-                <h3 class="text-muted text-left mb-3">결빙통계</h3>
-                <table class="table bg-light text-left">
-                  <thead>
-                    <tr class="text-muted">
-                      <th>접수 시간</th>
-                      <th>접수 경로</th>
-                      <th>센서 번호 / 사용자 ID</th>
-                      <th>장소</th>
-                      <th>처리 여부</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>    
+    </div>
 
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>결빙센서</th>
-                        <th>FS0101</th>
-                        <th>서울시 종로구</th>
-                        <th>test</th>
-                    </tr>
 
+    <!-- 결빙 통계  -->
+    <section>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-x1-10 col-lg-9 col-md-8 ml-auto">
+              <div class="row">
+                <div class="col-10">
+                  <h3 class="text-muted text-left mb-3">결빙 통계</h3>
+
+                  <table class="table bg-light text-left" style="margin:auto; text-align:center;">
+                    <thead>
+                      <tr class="text-muted">
+                        <th>접수 시각</th>
+                        <th>접수 경로</th>
+                        <th>센서 번호 / 사용자 ID</th>
+                        <th>장소</th>
+                        <th>처리 여부</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                          <th><a href="stats_detail.html" style="text-decoration:none; color:black;">29-03-2021 12:30</a></th>
+                          <th><a href="stats_detail.html" style="text-decoration:none; color:black;">노면센서</a></th>
+                          <th><a href="stats_detail.html"  style="text-decoration:none; color:black;">FS0101</a></th>
+                          <th><a href="stats_detail.html" style="text-decoration:none; color:black;">서울시 종로구</a></th>
+                          <th>
+                            <select class="form-select form-control" list="datalistOptions">
+                                <option selected>완료</option>
+                                <option value="1">미완료</option>
+                                <option value="2">보류</option>
+                            </select>
+                          </th>
+                      </tr>
+                      <tr>
+                        <th>29-03-2021 12:30</th>
+                        <th>Nicholas</th>
+                        <th>james</th>
+                        <th>부산시 해운대구</th>
+                        <th>
+                          <select class="form-select form-control" list="datalistOptions">
+                              <option selected>완료</option>
+                              <option value="1">미완료</option>
+                              <option value="2">보류</option>
+                          </select>
+                        </th>
+                    </tr>
                     <tr>
-                        <th>23-03-2021 12:40</th>
+                        <th>29-03-2021 12:30</th>
                         <th>사용자</th>
                         <th>hanium</th>
-                        <th>부산시 해운대구</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>Nichilas</th>
-                        <th>Shifa NG</th>
                         <th>Starbucks KL</th>
-                        <th>test</th>
+                        <th>
+                          <select class="form-select form-control" list="datalistOptions">
+                              <option selected>완료</option>
+                              <option value="1">미완료</option>
+                              <option value="2">보류</option>
+                          </select>
+                        </th>
                     </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>Nichilas</th>
-                        <th>Shifa NG</th>
-                        <th>Starbucks KL</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>Nichilas</th>
-                        <th>Shifa NG</th>
-                        <th>Starbucks KL</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>사용자</th>
-                        <th>hanium</th>
-                        <th>부산시 해운대구</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>결빙센서</th>
-                        <th>FS0101</th>
-                        <th>서울시 종로구</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>사용자</th>
-                        <th>hanium</th>
-                        <th>부산시 해운대구</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>결빙센서</th>
-                        <th>FS0101</th>
-                        <th>백악관</th>
-                        <th>test</th>
-                    </tr>
-
-                    <tr>
-                        <th>23-03-2021 12:40</th>
-                        <th>결빙센서</th>
-                        <th>FS0101</th>
-                        <th>서울시 종로구</th>
-                        <th>test</th>
-                    </tr>
-
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
 
                 <!-- 페이지네이션 -->
                 <nav>
@@ -331,6 +296,7 @@
                     </li>
                   </ul>
                 </nav>
+
               </div>
             </div>
           </div>
