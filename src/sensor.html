@@ -51,25 +51,25 @@
                           </li>
 
                           <li class="nav-item">
-                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="stats.html" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="far fa-chart-bar text-black fa-lg mr-3"></i>통계
                             </a>
                           </li>
 
                           <li class="nav-item">
-                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="sensor.html" class="nav-link text-black p-3 mb-2 current">
                               <i class="fas fa-dot-circle text-black fa-lg mr-3"></i>센서 현황 / 관리
                             </a>
                           </li>
 
                           <li class="nav-item">
-                            <a href="#" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="weather.html" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="fas fa-icicles text-black fa-lg mr-3"></i>날씨
                             </a>
                           </li>
 
                           <li class="nav-item">
-                            <a href="map.html" class="nav-link text-black p-3 mb-2 current">
+                            <a href="map.html" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="far fa-map text-black fa-lg mr-3"></i>지도
                             </a>
                           </li>
@@ -81,7 +81,7 @@
                           </li>
 
                           <li class="nav-item">
-                            <a href="map.html" class="nav-link text-black p-3 mb-2 sidebar-link">
+                            <a href="response.html" class="nav-link text-black p-3 mb-2 sidebar-link">
                               <i class="fas fa-headset text-black fa-lg mr-3"></i>사고 대응
                             </a>
                           </li>
@@ -104,119 +104,139 @@
         </div>
     </nav>
 
+    <!-- 센서 현황  -->
     <section>
         <div class="container-fluid">
           <div class="row">
             <div class="col-x1-10 col-lg-9 col-md-8 ml-auto">
               <div class="row">
-                <div class="col-xl-10">
-                  <h3 class="text-muted text-left mb-3">지도</h3>
-                  <div>
-                    <div class="card">
-                        <div class="card-header">
-                            <b>센서 상세 정보</b>
-                        </div>
-                        <div class="card-body">
-                            <b>센서</b>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-10">
-                                        <img src="images/Ellipse.png" alt="" width="50" class="rounded-circle mr-3">
-                                        <b>RS0102</b>
-                                    </div>
-                                    <div class="col-2">
-                                        <img src="images/sensor.png" alt="" width="100" class="rounded-circle mr-3 ml-auto">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-10">
+                  <h3 class="text-muted text-left mb-3">센서 현황</h3>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <b>세부사항</b>
-                        </div>
-                        <div class="card-body">
+                  <table class="table bg-light text-left" style="margin:auto; text-align:center;">
+                    <thead>
+                      <tr class="text-muted">
+                        <th>센서 종류</th>
+                        <th>센서 번호</th>
+                        <th>센서 구입일</th>
+                        <th>위치</th>
+                        <th>비고</th>
+                        <th>ON / OFF</th>
+                      </tr>
+                    </thead>
+                    <tbody>
 
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">상태</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                    ON
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                    OFF
-                                    </label>
-                                </div>
-                            </div>
+                      <tr>
+                          <th>결빙 센서</th>
+                          <th><a href="getSensorInfo.html" style="color:black;">FS0101</a></th>
+                          <th>29-03-2019 12:30</th>
+                          <th>서울시 종로구</th>
+                          <th>청와대 앞</th>                        
+                          <th>
+                            <select class="form-select form-control" list="datalistOptions">
+                                <option selected>ON</option>
+                                <option value="1">ON</option>
+                                <option value="2">OFF</option>
+                            </select>
+                          </th>
+                      </tr>
 
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">센서 구입일</label>
-                                <div class="form-group"> 
-                                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest"> 
-                                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" placeholder="(mm/dd/yyyy)"> 
-                                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker"> 
-                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div> 
-                                    </div>
-                                    </div> 
-                                </div>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">최근 점검일</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                            </div>
+                      <tr>
+                        <th>결빙 센서</th>
+                        <th><a href="getSensorInfo.html" style="color:black;">FS0101</a></th>
+                        <th>29-03-2019 12:30</th>
+                        <th>서울시 종로구</th>
+                        <th>청와대 앞</th>                        
+                        <th>
+                          <select class="form-select form-control" list="datalistOptions">
+                              <option selected>ON</option>
+                              <option value="1">ON</option>
+                              <option value="2">OFF</option>
+                          </select>
+                        </th>
+                    </tr>
 
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">위치</label>
-                                <select class="btn btn-Primary form-select" id="inputGroupSelect01">
-                                    <option selected>선택하기...</option>
-                                    <option value="1">선부 2동</option>
-                                    <option value="2">역곡동</option>
-                                  </select>
-                            </div>
+                    <tr>
+                        <th>결빙 센서</th>
+                        <th><a href="getSensorInfo.html" style="color:black;">FS0101</a></th>
+                        <th>29-03-2019 12:30</th>
+                        <th>서울시 종로구</th>
+                        <th>청와대 앞</th>                        
+                        <th>
+                          <select class="form-select form-control" list="datalistOptions">
+                              <option selected>ON</option>
+                              <option value="1">ON</option>
+                              <option value="2">OFF</option>
+                          </select>
+                        </th>
+                    </tr>
 
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">비고</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-                            </div>
-                        </div>
-                        <div>
-                            <a href="#" data-toggle="modal" data-target="#cancel-add-push"><button type="button" class="btn text-uppercase font-weight-bold text-dark py-2 mb-2"><i class="fas fa-times text-dark"></i>    취소</button></a>
-                            <button type="button" class="btn btn-success text-uppercase font-weight-bold text-light py-2 mb-2"><i class="far fa-save text-light"></i>   저장</button>
-                        </div>
-                    </div>
-                  </div>
-                </div>
+                    <tr>
+                        <th>결빙 센서</th>
+                        <th><a href="getSensorInfo.html" style="color:black;">FS0101</a></th>
+                        <th>29-03-2019 12:30</th>
+                        <th>서울시 종로구</th>
+                        <th>청와대 앞</th>                        
+                        <th>
+                          <select class="form-select form-control" list="datalistOptions">
+                              <option selected>ON</option>
+                              <option value="1">ON</option>
+                              <option value="2">OFF</option>
+                          </select>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th>결빙 센서</th>
+                        <th><a href="getSensorInfo.html" style="color:black;">FS0101</a></th>
+                        <th>29-03-2019 12:30</th>
+                        <th>서울시 종로구</th>
+                        <th>청와대 앞</th>                        
+                        <th>
+                          <select class="form-select form-control" list="datalistOptions">
+                              <option selected>ON</option>
+                              <option value="1">ON</option>
+                              <option value="2">OFF</option>
+                          </select>
+                        </th>
+                    </tr>
+
+                    </tbody>
+                  </table>
+
+                <!-- 페이지네이션 -->
+                <nav>
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                      <a href="#" class="page-link py-2 px-3">
+                        <span>&laquo;</span>
+                      </a>
+                    </li>
+
+                    <li class="page-item active">
+                      <a href="#" class="page-link py-2 px-3">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="#" class="page-link py-2 px-3">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="#" class="page-link py-2 px-3">3</a>
+                    </li>
+
+                    <li class="page-item">
+                      <a href="#" class="page-link py-2 px-3">
+                        <span>&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+
               </div>
             </div>
           </div>
         </div>
-    </section>
-
-    <!-- 센서 등록 취소 시 팝업 -->
-    <div class="modal fade" id="cancel-add-push">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">작성을 멈추시겠습니까?</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              작성하던 센서 정보가 사라집니다.
-              그래도 정말 작성을 멈추시겠습니까?
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-success" data-dismiss="model">아니요</button>
-              <a href="sensor.html"><button type="button" class="btn btn-danger" data-dismiss="model">작성 그만하기</button></a>
-            </div>
-          </div>
-        </div>
       </div>
+    </section>
 
     <!-- 로그아웃 팝업 -->
     <div class="modal fade" id="sign-out">

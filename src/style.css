@@ -6,6 +6,7 @@
 
   .top-navbar {
     position: static;
+    background-color: #6945ff;
   }
 }
 
@@ -31,12 +32,12 @@
 }
 
 .sidebar-link:hover {
-  background-color: cornflowerblue;
+  background-color: #0275d8;
   border-radius: 5px;
 }
 
 .current {
-  background-color: lightblue;
+  background-color: #5bc0de;
   border-radius: 7px;
   box-shadow: 2px 3px 7px #111;
   transition: all 0.2s;
